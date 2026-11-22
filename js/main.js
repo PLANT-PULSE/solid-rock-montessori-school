@@ -1,14 +1,11 @@
 const PORTAL_URLS = {
   parent: "https://smart-school.up.railway.app/parent_login.php",
   student: "https://smart-school.up.railway.app/login.php",
-  teacher: "https://smart-school.up.railway.app/login.php",
   forgotPassword: "https://smart-school.up.railway.app/forgot_password.php"
 };
 const FORM_ENDPOINT = "https://formspree.io/f/REPLACE_WITH_YOUR_FORM_ID";
 const NEWSLETTER_ENDPOINT = "https://REPLACE_WITH_YOUR_MAILING_LIST_ENDPOINT";
-const WHATSAPP_NUMBER = "233246410195";
-const WHATSAPP_GENERAL = `https://wa.me/${WHATSAPP_NUMBER}?text=${encodeURIComponent("Hello Morning Dew Academy, I would like to make an enquiry about your school.")}`;
-const WHATSAPP_ADMISSION = `https://wa.me/${WHATSAPP_NUMBER}?text=${encodeURIComponent("Hello Morning Dew Academy, I am interested in admission for my ward. Please provide me with information about the admission process.")}`;
+const WHATSAPP_NUMBER = "233544908389";
 
 const pageLinks = [
   ["Home", "index.html", "home"],
@@ -22,14 +19,14 @@ const pageLinks = [
 ];
 
 const schoolPhotos = [
-  { title: "Our pupils", category: "Community", image: "assets/WhatsApp Image 2026-11-20 at 12.55.27 PM.jpeg", altText: "Morning Dew Academy pupils in the school grounds" },
-  { title: "School learners", category: "Classroom", image: "assets/WhatsApp Image 2026-11-20 at 12.59.15 PM.jpeg", altText: "Morning Dew Academy learners in blue and white uniforms" },
-  { title: "Morning Dew class", category: "Classroom", image: "assets/WhatsApp Image 2026-11-20 at 12.57.09 PM.jpeg", altText: "Morning Dew Academy pupils wearing the school uniform" },
-  { title: "Pupils together", category: "Community", image: "assets/WhatsApp Image 2026-11-20 at 12.55.27 PM (1).jpeg", altText: "Morning Dew Academy pupils together" },
-  { title: "Around the school", category: "Cultural Events", image: "assets/WhatsApp Image 2026-11-20 at 12.55.28 PM.jpeg", altText: "Morning Dew Academy school community" },
-  { title: "Learning and play", category: "Sports & Play", image: "assets/WhatsApp Image 2026-11-20 at 12.55.28 PM (1).jpeg", altText: "Morning Dew Academy pupils in an outdoor school setting" },
-  { title: "School building", category: "Community", image: "assets/WhatsApp Image 2026-11-20 at 12.59.13 PM (1).jpeg", altText: "Morning Dew Academy school building" },
-  { title: "School transport", category: "Community", image: "assets/WhatsApp Image 2026-11-20 at 12.59.17 PM.jpeg", altText: "Morning Dew Academy transport vehicle" }
+  { title: "A classroom community", category: "Classroom", image: "assets/classroom-children-01.jpg", altText: "Children wearing their green-and-white uniforms in the classroom" },
+  { title: "Learning with a teacher", category: "Montessori Learning", image: "assets/classroom-teacher-children.jpg", altText: "A teacher guiding children during a classroom activity" },
+  { title: "A welcoming school", category: "Community", image: "assets/school-building.jpg", altText: "The Solid Rock Montessori School building in Kissi" },
+  { title: "Children learning together", category: "Classroom", image: "assets/classroom-group-01.jpg", altText: "Children and their teacher gathered around classroom learning materials" },
+  { title: "A shared learning activity", category: "Montessori Learning", image: "assets/classroom-group-02.jpg", altText: "Children taking part in a classroom activity" },
+  { title: "Classroom discovery", category: "Classroom", image: "assets/classroom-activity-01.jpg", altText: "Children gathered around a classroom learning table" },
+  { title: "Guided classroom work", category: "Montessori Learning", image: "assets/classroom-activity-02.jpg", altText: "A teacher and children working together in the classroom" },
+  { title: "Learning side by side", category: "Classroom", image: "assets/classroom-children-01.jpg", altText: "Students learning side by side in their school uniforms" }
 ];
 
 function renderHeader() {
@@ -42,9 +39,9 @@ function renderHeader() {
   mount.innerHTML = `
     <header class="site-header">
       <div class="nav-inner">
-        <a class="brand" href="index.html" aria-label="Morning Dew Academy home">
-          <img src="assets/morning-dew-logo.jpeg" width="100" height="100" alt="Morning Dew Academy crest">
-          <span>MORNING DEW<small>ACADEMY · BRONYIBIMA</small></span>
+        <a class="brand" href="index.html" aria-label="Solid Rock Montessori School home">
+          <img src="assets/logo.jpeg" width="100" height="100" alt="Solid Rock school crest">
+          <span>SOLID ROCK<small>MONTESSORI SCHOOL · KISSI</small></span>
         </a>
         <nav class="main-nav" id="primary-navigation" aria-label="Main navigation">
           <button class="mobile-drawer-close" type="button" aria-label="Close navigation menu">&times;</button>
@@ -70,27 +67,27 @@ function renderFooter() {
     <footer class="site-footer">
       <div class="container footer-main">
         <div>
-          <a class="footer-brand" href="index.html"><img src="assets/morning-dew-logo.jpeg" width="100" height="100" loading="lazy" alt="Morning Dew Academy crest"><span>MORNING DEW ACADEMY<small>GOD REIGNS</small></span></a>
-          <p>A caring learning community in Bronyibima – New Site, Elmina.</p>
-          <div class="footer-links footer-social"><a href="${WHATSAPP_GENERAL}" target="_blank" rel="noopener noreferrer">WhatsApp enquiry</a><a href="mailto:jt7753182@gmail.com">Email the school</a></div>
+          <a class="footer-brand" href="index.html"><img src="assets/logo.jpeg" width="100" height="100" loading="lazy" alt="Solid Rock school crest"><span>SOLID ROCK MONTESSORI SCHOOL<small>[SCHOOL MOTTO TO BE CONFIRMED]</small></span></a>
+          <p>Child-led learning and a prepared environment on Cemetery Road, South Africa, Kissi, Ghana.</p>
+          <p class="placeholder-note">On Christ the Solid Rock we stand.</p>
+          <div class="footer-links footer-social"><a href="#" aria-label="Facebook link to be confirmed">Facebook · to be confirmed</a><a href="#" aria-label="Instagram link to be confirmed">Instagram · to be confirmed</a></div>
         </div>
         <div><h2>Explore</h2><nav class="footer-links" aria-label="Footer navigation">${pageLinks.map(([label, href]) => `<a href="${href}">${label}</a>`).join("")}</nav></div>
-        <div class="footer-contact"><h2>Contact</h2><address>Bronyibima, KEEA District,<br>Central Region, Ghana<br>Post Office Box EL 305</address><p><a href="${WHATSAPP_GENERAL}" target="_blank" rel="noopener noreferrer">+233 24 641 0195</a></p><p>024 246 6898 · 024 962 8141</p><p><a href="mailto:jt7753182@gmail.com">jt7753182@gmail.com</a></p>
-          <div class="footer-map"><iframe title="Map of Bronyibima, Elmina, Ghana" src="https://www.google.com/maps?q=Bronyibima%2C%20Elmina%2C%20Ghana&output=embed" loading="lazy" referrerpolicy="no-referrer-when-downgrade"></iframe></div>
+        <div class="footer-contact"><h2>Contact</h2><address>Cemetery Road, South Africa,<br>Kissi, KEEA District,<br>Central Region, Ghana<br>Postal address to be confirmed</address><p>Phone · to be confirmed</p><p>Email · to be confirmed</p>
+          <div class="footer-map"><iframe title="Map of Solid Rock Montessori School on Cemetery Road, South Africa, Kissi" src="https://www.google.com/maps?q=Cemetery%20Road%2C%20South%20Africa%2C%20Kissi%2C%20KEEA%20District%2C%20Central%20Region%2C%20Ghana&output=embed" loading="lazy" referrerpolicy="no-referrer-when-downgrade"></iframe></div>
         </div>
-        <div><h2>Send a quick note</h2><form class="footer-mini-form" data-form-kind="contact" novalidate><label class="sr-only" for="footer-name">Your name</label><input id="footer-name" name="name" placeholder="Your name" required><label class="sr-only" for="footer-email">Your email</label><input id="footer-email" type="email" name="email" placeholder="Your email" required><label class="sr-only" for="footer-message">Your message</label><textarea id="footer-message" name="message" placeholder="Your message" required></textarea><p class="form-status" role="status" aria-live="polite"></p><button type="submit">Send via WhatsApp</button><small class="form-note">Your message will open in WhatsApp for review.</small></form></div>
+        <div><h2>Send a quick note</h2><form class="footer-mini-form" data-form-kind="footer" novalidate><label class="sr-only" for="footer-name">Your name</label><input id="footer-name" name="name" placeholder="Your name" required><label class="sr-only" for="footer-email">Your email</label><input id="footer-email" type="email" name="email" placeholder="Your email" required><label class="sr-only" for="footer-message">Your message</label><textarea id="footer-message" name="message" placeholder="Your message" required></textarea><p class="form-status" role="status" aria-live="polite"></p><button type="submit">Send message</button><small class="form-note">Delivery is not configured until the school replaces the form endpoint.</small></form></div>
       </div>
-      <div class="container footer-bottom"><p>&copy; <span data-current-year></span> Morning Dew Academy. All rights reserved.</p><p>Motto: God Reigns</p></div>
+      <div class="container footer-bottom"><p>&copy; <span data-current-year></span> Solid Rock Montessori School. All rights reserved.</p><p>On Christ the Solid Rock we stand.</p></div>
     </footer>
-    <a class="floating-whatsapp" href="${WHATSAPP_GENERAL}" target="_blank" rel="noopener noreferrer" aria-label="Enquire on WhatsApp">WhatsApp</a>
     <button class="back-to-top" type="button" aria-label="Back to top">↑</button>`;
 }
 
 function setupPreloader() {
   const preloader = document.createElement("div");
   preloader.className = "preloader";
-  preloader.setAttribute("aria-label", "Loading Morning Dew Academy");
-  preloader.innerHTML = `<div class="preloader-inner"><span class="preloader-ring" aria-hidden="true"></span><img src="assets/morning-dew-logo.jpeg" width="100" height="100" alt=""><span>Morning Dew Academy</span></div>`;
+  preloader.setAttribute("aria-label", "Loading Solid Rock Montessori School");
+  preloader.innerHTML = `<div class="preloader-inner"><span class="preloader-ring" aria-hidden="true"></span><img src="assets/logo.jpeg" width="100" height="100" alt=""><span>Solid Rock Montessori School</span></div>`;
   document.body.append(preloader);
   window.setTimeout(() => {
     preloader.classList.add("is-done");
@@ -343,7 +340,7 @@ function renderPhotoGallery() {
     button.dataset.schoolPhoto = "true";
     button.dataset.category = photo.category;
     button.dataset.image = photo.image;
-    button.dataset.caption = `${photo.title} · Morning Dew Academy`;
+    button.dataset.caption = `${photo.title} · Solid Rock Montessori School`;
     const image = document.createElement("img");
     image.src = photo.image;
     image.alt = photo.altText;
@@ -371,7 +368,7 @@ function setupPhotoFilters() {
       card.hidden = !show;
       if (show) visible += 1;
     });
-    if (count) count.textContent = `${visible} ${visible === 1 ? "photo" : "photos"} · Morning Dew Academy`;
+    if (count) count.textContent = `${visible} ${visible === 1 ? "photo" : "photos"} · Solid Rock Montessori School`;
   };
   buttons.forEach((button) => button.addEventListener("click", () => {
     buttons.forEach((item) => item.classList.toggle("is-active", item === button));
@@ -476,7 +473,7 @@ function setupForms() {
       ]));
       const submittedFields = [...new FormData(form).entries()].filter(([, value]) => String(value).trim());
       const messageLines = [
-        `Hello Morning Dew Academy, I would like to make an enquiry about your school. This message came from the ${source}.`,
+        `Hello, I am contacting Solid Rock Montessori School from the ${source} of your website.`,
         "",
         ...submittedFields.map(([name, value]) => {
           return `${fieldLabels.get(name) || name}: ${String(value).trim()}`;
